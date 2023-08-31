@@ -109,7 +109,9 @@ font-family: var(--font-body-stack);
 .result {
   padding: 1rem 0;
   font-family: var(--font-body-stack);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   color: var(--light-white);
   text-align: center;
+  font-weight: 900;
+ 
 }

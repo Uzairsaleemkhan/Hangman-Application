@@ -3,7 +3,7 @@ import Instructions from "./instructions.js"
 import { sound } from "../data/sound.js"
 const Home = (_=>{
     
-    const $hangman = document.querySelector('.hangman')    
+    const $hangman = document.querySelector('.hangman')
     const render=(_)=>{
         let html =''
         html+= `
@@ -15,6 +15,7 @@ const Home = (_=>{
     }
     
     const listeners =()=>{
+
         document.querySelector('.start').addEventListener('click',(_)=>{
             sound.click.play()
             Game.init()
