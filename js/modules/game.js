@@ -1,6 +1,7 @@
 import {sound} from "../data/sound.js"
 import Home from "./home.js"
 import End from "./end.js"
+import Board from "./board.js"
 const Game = (_=>{
 const letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 const words =['ball','cat','cricket','dog', 'apple']
@@ -8,13 +9,7 @@ let chosenWord;
 let guessingWord;
 let lives;
 let guesses;
-
-
-
-
-
 const $hangman = document.querySelector('.hangman')
-
 const init=_=>{
      chosenWord = chooseWord()
      guessingWord = guessGenerator(chosenWord)
@@ -22,13 +17,13 @@ const init=_=>{
   lives=7;
     render()
     listeners()
+    Board.init()
     } 
 
 
 
 
 const render =()=>{
-
 let html = `
 <p class="hangman__stats">Lives:<span class="hangman__lives">${lives}</span></p>
 <h1 class="hangman__title">Hangman</h1>
@@ -47,9 +42,7 @@ return markup;
 <button class="button hangman__trigger">Main Menu</button>
 `
 $hangman.innerHTML = html
-
 }
-
 const listeners =_=>{
   $hangman.addEventListener('click',(e)=>{
     if(e.target.matches('.hangman__trigger')){
@@ -83,9 +76,10 @@ if(chosenWord.includes(letter)){
 }
 else{
 lives--
+Board.setState(lives)
 }
-myRender()
 
+myRender()
 gameOver()
 }
 
@@ -154,13 +148,8 @@ const guessGenerator = (string) => {
   }
   return arr;
 };
-
-
     return{
         init
     }
-
 })()
-
-
 export default Game

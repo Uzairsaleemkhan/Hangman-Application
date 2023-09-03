@@ -115,3 +115,10 @@ font-family: var(--font-body-stack);
   font-weight: 900;
  
 }
+
+
+li{
+  margin: 1rem 0;
+  text-align: left;
+  font-weight: 600;
+}
